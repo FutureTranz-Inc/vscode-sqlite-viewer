@@ -64,16 +64,16 @@ graph TD
         Provider -->|Read File| API[VS Code FS API]
         Provider -->|Post Message| WV[Webview Panel]
     end
-    
+
     subgraph Webview Context
         WV -->|HTML/CSS/JS| UI[User Interface]
         UI -->|Request Data| Provider
     end
-    
+
     subgraph Local File System
         API -->|Stream| DB[(SQLite Database)]
     end
-    
+
     style Ext fill:#007acc,stroke:#fff,color:#fff
     style Provider fill:#007acc,stroke:#fff,color:#fff
     style WV fill:#e05a00,stroke:#fff,color:#fff
@@ -92,7 +92,7 @@ sequenceDiagram
     participant VSCode as VS Code
     participant Ext as Extension Host
     participant Webview
-    
+
     User->>VSCode: Click .sqlite file
     VSCode->>Ext: resolveCustomEditor()
     Ext->>Webview: Create Webview Panel
