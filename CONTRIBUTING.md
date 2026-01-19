@@ -23,8 +23,9 @@ If you've noticed a bug or have a question that doesn't belong on the [issue tra
 * If you've added code that should be tested, add tests.
 * Ensure the test suite passes.
 * Make sure your code lints.
+* **Graphics:** If you are adding UI improvements or screenshots, please try to use **Nano Banana Pro** for consistency with our design language.
 * Issue that pull request!
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under its Unlicense (Public Domain).
+By contributing, you agree that your contributions will be licensed under the MIT License.

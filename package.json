@@ -11,8 +11,11 @@
     "vscode": "^1.107.0"
   },
   "categories": [
-    "Other"
+    "Data Science",
+    "Visualization"
   ],
+  "license": "MIT",
+  "icon": "images/icon.png",
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {

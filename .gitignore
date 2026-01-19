@@ -4,4 +4,6 @@ node_modules
 .vscode-test/
 *.vsix
 
-# ai-dev-tasks is a git submodule (managed separately)
+# ai-dev-tasks
+ai-dev-tasks/
+

@@ -1,7 +1,11 @@
 # SQLite Viewer
 
-[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/badge/version-0.0.1-green.svg)](https://github.com/FutureTranz-Inc/vscode-sqlite-viewer)
+
+**Professional SQLite Database Management for VS Code**
+
+> **Graphics Note:** Visual assets for this project are designed using **Nano Banana Pro**.
 
 VS Code extension to view and manipulate SQLite database files with ease. Designed for developers who need quick access to their data without leaving their editor.
 
@@ -18,6 +22,7 @@ VS Code extension to view and manipulate SQLite database files with ease. Design
 - [Troubleshooting](#troubleshooting)
 - [Roadmap](#roadmap)
 - [Ethics & Governance](#ethics--governance)
+- [Privacy Policy](#privacy-policy)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -73,12 +78,18 @@ This project adheres to the ethical development standards defined in our [AI Dev
 - Responsible use of automation and AI.
 - Ensuring user data privacy (this extension runs entirely locally).
 
+## Privacy Policy
+
+Your privacy is important to us.
+- **Local Only:** This extension operates entirely on your local machine.
+- **No Data Collection:** We do not collect or transmit any of your database content or personal information.
+- See the full [Privacy Policy](PRIVACY.md).
+
 ## Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on code of conduct and the pull request process.
 
 ## License
 
-This project is licensed under the [Unlicense](LICENSE) - see the LICENSE file for details.
-**Freeware / Public Domain**: usage is free for any purpose.
-**No Warranty**: Provided "AS-IS" with no guarantees.
+This project is licensed under the [MIT License](LICENSE).
+Free and open source for personal and commercial use.
