@@ -9,7 +9,7 @@
 
 VS Code extension to view and manipulate SQLite database files with ease. Designed for developers who need quick access to their data without leaving their editor.
 
-![SQLite Viewer Demo](images/demo_placeholder.png)
+![SQLite Viewer Demo](https://placehold.co/800x450/232323/FFF.png?text=Demo+Screenshot+Coming+Soon)
 
 > **Note:** Screenshots coming soon! Please add `demo.png` and `editor_view.png` to the `images` folder.
 
@@ -33,7 +33,7 @@ VS Code extension to view and manipulate SQLite database files with ease. Design
 - **Schema Inspection**: View database schema and structure to understand your data model.
 - **SQL Execution**: (Coming Soon) Run custom SQL queries directly from the interface.
 
-![Editor View](images/editor_view_placeholder.png)
+![Editor View](https://placehold.co/800x450/232323/FFF.png?text=Editor+View+Coming+Soon)
 
 ## Installation
 
