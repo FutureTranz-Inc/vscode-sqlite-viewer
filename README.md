@@ -9,7 +9,20 @@
 
 VS Code extension to view and manipulate SQLite database files with ease. Designed for developers who need quick access to their data without leaving their editor.
 
-![SQLite Viewer Demo](https://placehold.co/800x450/232323/FFF.png?text=Demo+Screenshot+Coming+Soon)
+### Extension Workflow
+
+```mermaid
+%%{init: {'theme': 'neutral', 'fontFamily': 'monospace'}}%%
+graph LR
+    User((User)) -->|Clicks| File[sqlite.db]
+    File -->|Opens| Editor[Custom Editor]
+    Editor -->|Shows| Tables[Table List]
+    Tables -->|Select| View[Data View]
+    
+    style User fill:#f9f,stroke:#333,stroke-width:2px
+    style File fill:#bbf,stroke:#333,stroke-width:2px
+    style Editor fill:#dfd,stroke:#333,stroke-width:2px
+```
 
 > **Note:** Screenshots coming soon! Please add `demo.png` and `editor_view.png` to the `images` folder.
 
@@ -33,7 +46,49 @@ VS Code extension to view and manipulate SQLite database files with ease. Design
 - **Schema Inspection**: View database schema and structure to understand your data model.
 - **SQL Execution**: (Coming Soon) Run custom SQL queries directly from the interface.
 
-![Editor View](https://placehold.co/800x450/232323/FFF.png?text=Editor+View+Coming+Soon)
+### UI Mockup
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffcc00', 'edgeLabelBackground':'#ffffff', 'tertiaryColor': '#fff'}}}%%
+graph TD
+    subgraph VSCode["VS Code Window"]
+        direction TB
+        Title["SQLite Viewer: my_database.db"]
+        
+        subgraph Split["Main Area"]
+            direction LR
+            
+            subgraph Sidebar["Sidebar (Tables)"]
+                direction TB
+                T1["📄 users_table"]
+                T2["📄 orders_table"]
+                T3["📄 products"]
+                T4["⚙️ settings"]
+            end
+            
+            subgraph Content["Data View Panel"]
+                direction TB
+                Query["🔍 SELECT * FROM users_table..."]
+                
+                subgraph Grid["Result Grid"]
+                    Header["id | username | email      | role "]
+                    Row1["1  | admin    | adm@loc.al | super"]
+                    Row2["2  | user1    | usr@loc.al | user "]
+                    Row3["3  | guest    | gst@loc.al | guest"]
+                end
+            end
+        end
+        
+        Title --> Split
+        Sidebar --> Content
+    end
+    
+    style VSCode fill:#2d2d2d,stroke:#fff,color:#fff
+    style Sidebar fill:#252526,stroke:#3e3e42,color:#ccc
+    style Content fill:#1e1e1e,stroke:#3e3e42,color:#ccc
+    style Query fill:#3c3c3c,stroke:#3e3e42,color:#fff
+    style Grid fill:#1e1e1e,stroke:#444,color:#aaa
+```
 
 ## Installation
 
