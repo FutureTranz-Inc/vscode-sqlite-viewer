@@ -1,7 +1,7 @@
 # SQLite Viewer
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-0.0.1-green.svg)](https://github.com/FutureTranz-Inc/vscode-sqlite-viewer)
+[![Version](https://img.shields.io/badge/version-0.0.2-green.svg)](https://github.com/FutureTranz-Inc/vscode-sqlite-viewer)
 
 **Professional SQLite Database Management for VS Code**
 
@@ -18,7 +18,7 @@ graph LR
     File -->|Opens| Editor[Custom Editor]
     Editor -->|Shows| Tables[Table List]
     Tables -->|Select| View[Data View]
-    
+
     style User fill:#f9f,stroke:#333,stroke-width:2px
     style File fill:#bbf,stroke:#333,stroke-width:2px
     style Editor fill:#dfd,stroke:#333,stroke-width:2px
@@ -54,10 +54,10 @@ graph TD
     subgraph VSCode["VS Code Window"]
         direction TB
         Title["SQLite Viewer: my_database.db"]
-        
+
         subgraph Split["Main Area"]
             direction LR
-            
+
             subgraph Sidebar["Sidebar (Tables)"]
                 direction TB
                 T1["📄 users_table"]
@@ -65,11 +65,11 @@ graph TD
                 T3["📄 products"]
                 T4["⚙️ settings"]
             end
-            
+
             subgraph Content["Data View Panel"]
                 direction TB
                 Query["🔍 SELECT * FROM users_table..."]
-                
+
                 subgraph Grid["Result Grid"]
                     Header["id | username | email      | role "]
                     Row1["1  | admin    | adm@loc.al | super"]
@@ -78,11 +78,11 @@ graph TD
                 end
             end
         end
-        
+
         Title --> Split
         Sidebar --> Content
     end
-    
+
     style VSCode fill:#2d2d2d,stroke:#fff,color:#fff
     style Sidebar fill:#252526,stroke:#3e3e42,color:#ccc
     style Content fill:#1e1e1e,stroke:#3e3e42,color:#ccc
