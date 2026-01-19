@@ -54,9 +54,57 @@ VS Code extension to view and manipulate SQLite database files with ease. Design
 ## Architecture
 
 This extension uses VS Code's `CustomReadonlyEditorProvider` API.
+
+### System Design
+
+```mermaid
+graph TD
+    subgraph VS Code Extension Host
+        Ext[Extension Entry Point] --> Provider[CustomEditorProvider]
+        Provider -->|Read File| API[VS Code FS API]
+        Provider -->|Post Message| WV[Webview Panel]
+    end
+    
+    subgraph Webview Context
+        WV -->|HTML/CSS/JS| UI[User Interface]
+        UI -->|Request Data| Provider
+    end
+    
+    subgraph Local File System
+        API -->|Stream| DB[(SQLite Database)]
+    end
+    
+    style Ext fill:#007acc,stroke:#fff,color:#fff
+    style Provider fill:#007acc,stroke:#fff,color:#fff
+    style WV fill:#e05a00,stroke:#fff,color:#fff
+    style DB fill:#4CAF50,stroke:#fff,color:#fff
+```
+
 - **Frontend**: A Webview populated with HTML/CSS/JS that communicates with the extension host.
 - **Backend**: The extension host reads the SQLite file from disk and sends data to the Webview.
 - **Security**: The Webview is sandboxed and only allows scripts defined by the extension.
+
+### Data Flow
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant VSCode as VS Code
+    participant Ext as Extension Host
+    participant Webview
+    
+    User->>VSCode: Click .sqlite file
+    VSCode->>Ext: resolveCustomEditor()
+    Ext->>Webview: Create Webview Panel
+    Webview-->>Ext: Ready
+    Ext->>Webview: Send HTML Content
+    Webview-->>User: Display Loading State
+    Webview->>Ext: Request Table List
+    Ext->>VSCode: Read Database Header
+    VSCode-->>Ext: Database Metadata
+    Ext->>Webview: Return Table List
+    Webview-->>User: Render Tables
+```
 
 ## Troubleshooting
 
