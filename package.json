@@ -1,8 +1,12 @@
 {
   "name": "vscode-sqlite-viewer",
+  "publisher": "FutureTranz-Inc",
   "displayName": "SQLite Viewer",
   "description": "View and manipulate SQLite database files",
   "version": "0.0.1",
+  "author": {
+    "name": "FutureTranz Inc."
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/FutureTranz-Inc/vscode-sqlite-viewer.git"
