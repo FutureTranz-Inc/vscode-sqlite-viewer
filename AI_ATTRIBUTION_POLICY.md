@@ -35,13 +35,18 @@ This repository PROHIBITS the inclusion of AI attribution in:
 
 ### Original Authors to Honor
 
-This project is built on [snarktank/ai-dev-tasks](https://github.com/snarktank/ai-dev-tasks) created by:
-- Ryan Carson (snarktank)
-- 14+ human contributors
+The original ai-dev-tasks project [snarktank/ai-dev-tasks](https://github.com/snarktank/ai-dev-tasks) created by:
+- Ryan Carson (snarktank) + Team
 
 Enhanced by:
 - FutureTranz Development Team
 - Victor J. Quiñones
+
+This project was created by:
+• FutureTranz Development Team
+• Author: Victor J. Quinones
+• GitHub: victorjquinones
+• Twitter: vquinones
 
 **These humans must be credited. AI tools must not.**
 
