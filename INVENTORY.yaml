@@ -1,0 +1,10 @@
+name: vscode-sqlite-viewer
+org: FutureTranz-Inc
+language: TypeScript
+maturity: MVP
+category:
+- Web App
+target_market: B2B
+revenue_tier: Tier 3 ($100K-$500K)
+last_synced: '2026-02-27T08:55:31Z'
+notion_synced: true

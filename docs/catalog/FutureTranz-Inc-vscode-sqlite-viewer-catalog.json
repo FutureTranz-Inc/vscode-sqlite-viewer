@@ -1,0 +1,66 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-02-27T08:55:31Z",
+  "source": "notion-projects-inventory-v2",
+  "project": {
+    "name": "vscode-sqlite-viewer",
+    "organization": "FutureTranz-Inc",
+    "description": "FutureTranz Technology project: vscode sqlite viewer (TypeScript)",
+    "github_url": "https://github.com/FutureTranz-Inc/vscode-sqlite-viewer",
+    "primary_language": "TypeScript",
+    "category": [
+      "Web App"
+    ],
+    "maturity": "MVP",
+    "target_market": "B2B",
+    "team_effort": "Solo",
+    "public": true
+  },
+  "metrics": {
+    "stars": 2.0,
+    "contributors": 1.0,
+    "open_issues": 0,
+    "activity_score": 48.0,
+    "complexity_score": 4.0,
+    "velocity_rating": "High",
+    "hours_invested": 80.0,
+    "last_activity": "2026-02-17"
+  },
+  "financials": {
+    "revenue_model": [
+      "SaaS Subscription",
+      "Client Billable"
+    ],
+    "revenue_tier": "Tier 3 ($100K-$500K)",
+    "est_monthly_income": 388.0,
+    "est_annual_income": 4656.0,
+    "annual_revenue_potential": 0,
+    "labor_cost": 25000.0,
+    "roi_ratio": 0.19,
+    "gross_margin_pct": 0.8,
+    "ltv_cac_ratio": 10.07,
+    "payback_period_months": 64.43,
+    "tam_usd": 25000000000.0,
+    "sam_usd": 5000000000.0,
+    "som_usd": 50000000.0
+  },
+  "strategy": {
+    "buyer_persona": "IT managers at mid-sized enterprises seeking a TypeScript-based web app for efficient SQLite database management with high capital efficiency and low regulatory risk.",
+    "competitive_advantage": "High-efficiency SQLite database viewer built in TypeScript \u2014 streamlines data visualization for B2B applications, surpassing basic alternatives with real-time sync capabilities and tailored user experience.",
+    "competitors": "SQLite Viewer, SQLite Browser, DB Browser for SQLite, DBeaver",
+    "defensibility_moat": "Switching Costs | Users invest time and workflows into the vscode-sqlite-viewer, with high hours invested creating institutional knowledge that makes migrating to alternatives cumbersome over time.",
+    "gtm_motion": "Sales-Led",
+    "pricing_model": "Monthly/Annual SaaS subscription",
+    "investment_thesis": "vscode-sqlite-viewer solves low issues for TBD in a $10000M market by TBD.",
+    "investor_narrative": "In the B2B market, businesses struggle with managing SQLite databases effectively within their development environments, representing a significant opportunity in the $25B market. The \"vscode-sqlite-viewer\" is a web app that provides a seamless experience for viewing and managing SQLite databases, leveraging its high gross margin of 80% to position itself as a cost-effective solution. With 80 hours invested and currently at the MVP stage, this project is backed by a strong funding readiness score of 75, indicating substantial potential for growth and sustainability. Defensible through its unique integration with VSCode and a clear SaaS subscription revenue model, it aims to capture a share of the $50M serviceable obtainable market.",
+    "next_milestone": "PRD: docs/prd/catalog/FutureTranz-Inc-vscode-sqlite-viewer-prd.md | BP: docs/bp/catalog/FutureTranz-Inc-vscode-sqlite-viewer-bp.md"
+  },
+  "risk": {
+    "execution_risk": "High",
+    "regulatory_risk": "Low",
+    "problem_severity": "Medium",
+    "income_confidence": "Medium",
+    "capital_efficiency_rating": "High",
+    "funding_readiness_score": 75.0
+  }
+}
