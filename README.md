@@ -1,198 +1,260 @@
-# SQLite Viewer
+# vscode-sqlite-viewer
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-0.0.2-green.svg)](https://github.com/FutureTranz-Inc/vscode-sqlite-viewer)
+![Maturity](https://img.shields.io/badge/maturity-MVP-orange) ![Language](https://img.shields.io/badge/language-TypeScript-blue) ![GitHub stars](https://img.shields.io/github/stars/FutureTranz-Inc/vscode-sqlite-viewer) ![GitHub issues](https://img.shields.io/github/issues/FutureTranz-Inc/vscode-sqlite-viewer)
 
-**Professional SQLite Database Management for VS Code**
+> FutureTranz Technology project: vscode sqlite viewer (TypeScript)
 
-> **Graphics Note:** Visual assets for this project are designed using **Nano Banana Pro**.
+**Organization:** [FutureTranz-Inc](https://github.com/FutureTranz-Inc)  
+**Language:** TypeScript  
+**Maturity:** MVP  
+**Category:** Web App  
+**Target Market:** B2B
 
-VS Code extension to view and manipulate SQLite database files with ease. Designed for developers who need quick access to their data without leaving their editor.
 
-### Extension Workflow
 
-```mermaid
-%%{init: {'theme': 'neutral', 'fontFamily': 'monospace'}}%%
-graph LR
-    User((User)) -->|Clicks| File[sqlite.db]
-    File -->|Opens| Editor[Custom Editor]
-    Editor -->|Shows| Tables[Table List]
-    Tables -->|Select| View[Data View]
-
-    style User fill:#f9f,stroke:#333,stroke-width:2px
-    style File fill:#bbf,stroke:#333,stroke-width:2px
-    style Editor fill:#dfd,stroke:#333,stroke-width:2px
-```
-
-> **Note:** Screenshots coming soon! Please add `demo.png` and `editor_view.png` to the `images` folder.
+---
 
 ## Table of Contents
 
+- [Overview](#overview)
 - [Features](#features)
+- [Quick Start](#quick-start)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Architecture](#architecture)
-- [Troubleshooting](#troubleshooting)
-- [Roadmap](#roadmap)
-- [Ethics & Governance](#ethics--governance)
-- [Privacy Policy](#privacy-policy)
+- [Configuration](#configuration)
+- [API Reference](#api-reference)
 - [Contributing](#contributing)
 - [License](#license)
+- [Project Status](#project-status)
+
+---
+
+## Overview
+
+vscode-sqlite-viewer is tracked by the FutureTranz portfolio pipeline.
+
+FutureTranz Technology project: vscode sqlite viewer (TypeScript)
+
+### Problem Statement
+
+Teams need consistent, auditable repository documentation and inventory data.
+
+### Solution
+
+This repository is synchronized with portfolio metadata and generated documentation artifacts.
+
+---
 
 ## Features
 
-- **View SQLite Files**: Open `.sqlite`, `.db`, and `.sqlite3` files directly in VS Code by clicking on them in the explorer.
-- **Table Viewer**: Inspect tables and their data in a modern, responsive webview.
-- **Schema Inspection**: View database schema and structure to understand your data model.
-- **SQL Execution**: (Coming Soon) Run custom SQL queries directly from the interface.
+- Maintains vscode-sqlite-viewer metadata synchronized from Notion Projects Inventory V2.
+- Tracks operational and financial metrics in repository docs.
+- Publishes machine-readable catalog and inventory artifacts.
+- Keeps contribution and changelog files aligned with current status.
 
-### UI Mockup
+---
 
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffcc00', 'edgeLabelBackground':'#ffffff', 'tertiaryColor': '#fff'}}}%%
-graph TD
-    subgraph VSCode["VS Code Window"]
-        direction TB
-        Title["SQLite Viewer: my_database.db"]
+## Quick Start
 
-        subgraph Split["Main Area"]
-            direction LR
-
-            subgraph Sidebar["Sidebar (Tables)"]
-                direction TB
-                T1["📄 users_table"]
-                T2["📄 orders_table"]
-                T3["📄 products"]
-                T4["⚙️ settings"]
-            end
-
-            subgraph Content["Data View Panel"]
-                direction TB
-                Query["🔍 SELECT * FROM users_table..."]
-
-                subgraph Grid["Result Grid"]
-                    Header["id | username | email      | role "]
-                    Row1["1  | admin    | adm@loc.al | super"]
-                    Row2["2  | user1    | usr@loc.al | user "]
-                    Row3["3  | guest    | gst@loc.al | guest"]
-                end
-            end
-        end
-
-        Title --> Split
-        Sidebar --> Content
-    end
-
-    style VSCode fill:#2d2d2d,stroke:#fff,color:#fff
-    style Sidebar fill:#252526,stroke:#3e3e42,color:#ccc
-    style Content fill:#1e1e1e,stroke:#3e3e42,color:#ccc
-    style Query fill:#3c3c3c,stroke:#3e3e42,color:#fff
-    style Grid fill:#1e1e1e,stroke:#444,color:#aaa
+```bash
+# Clone and run
+git clone <repo-url>
+cd <repo>
+# Follow project-specific setup in docs/ or README sections below
 ```
+
+---
 
 ## Installation
 
-1. Open **Visual Studio Code**.
-2. Go to the **Extensions** view (`Ctrl+Shift+X` or `Cmd+Shift+X`).
-3. Search for "SQLite Viewer".
-4. Click **Install**.
-   *(Note: Until published to the Marketplace, you can clone this repo and run `F5` to test)*
+1. Clone the repository.
+2. Install dependencies documented in the repo.
+3. Run tests or checks before changes.
+
+---
 
 ## Usage
 
-1. **Open a Database**: Locate a `.sqlite`, `.db`, or `.sqlite3` file in your file explorer.
-2. **Click to Open**: The extension automatically registers as a custom editor for these file types.
-3. **Explore Data**:
-    - Use the sidebar to navigate between tables.
-    - View the schema and data in the main view.
+See project scripts and source files in this repository.
+
+---
 
 ## Architecture
 
-This extension uses VS Code's `CustomReadonlyEditorProvider` API.
+Repository structure snapshot:
 
-### System Design
-
-```mermaid
-graph TD
-    subgraph VS Code Extension Host
-        Ext[Extension Entry Point] --> Provider[CustomEditorProvider]
-        Provider -->|Read File| API[VS Code FS API]
-        Provider -->|Post Message| WV[Webview Panel]
-    end
-
-    subgraph Webview Context
-        WV -->|HTML/CSS/JS| UI[User Interface]
-        UI -->|Request Data| Provider
-    end
-
-    subgraph Local File System
-        API -->|Stream| DB[(SQLite Database)]
-    end
-
-    style Ext fill:#007acc,stroke:#fff,color:#fff
-    style Provider fill:#007acc,stroke:#fff,color:#fff
-    style WV fill:#e05a00,stroke:#fff,color:#fff
-    style DB fill:#4CAF50,stroke:#fff,color:#fff
+```
+./
+  .gitignore
+  .vscode-test.mjs
+  .vscodeignore
+  AI_ATTRIBUTION_POLICY.md
+  CHANGELOG.md
+  CLAUDE.md
+  CONTRIBUTING.md
+  INVENTORY.yaml
+  LICENSE
+  PRIVACY.md
+  README.md
+  SECURITY.md
+  eslint.config.mjs
+  package-lock.json
+  package.json
+  tsconfig.json
+  webpack.config.js
+images/
+  icon.png
+.claude/
+.claude/commands/
+  agent-help.md
+  business-analyst.md
+  cfo-agent.md
+  claudia.md
+  clo-agent.md
+  cmo-agent.md
+  code-reviewer.md
+  create-prd.md
+  cro-agent.md
+  cto-agent.md
+  debugger-agent.md
+  generate-tasks.md
+  graphics-artist.md
+  it-admin-agent.md
+  log-task.md
+  network-admin.md
+  people-ops-agent.md
+  pr-agent.md
+  process-task-list.md
+  project-manager.md
+  sales-marketing.md
+  security-reviewer.md
+  social-media-influencer.md
+  spec-writer.md
+  support-agent.md
+docs/
+docs/tasks/
+  tasks-0001-prd-core-sqlite-engine-integration.md
+  tasks-0002-prd-table-data-viewer.md
+  tasks-0003-prd-schema-inspector.md
+  tasks-0004-prd-sql-query-executor.md
+  tasks-0005-prd-sql-file-editor-support.md
+  tasks-0006-prd-data-editor-crud-operations.md
+  tasks-0007-prd-data-export-functionality.md
+  tasks-0008-prd-sqlite-read-write-admin-access.md
+  tasks-0009-prd-production-readiness.md
+docs/catalog/
+  FutureTranz-Inc-vscode-sqlite-viewer-catalog.json
+docs/logs/
+  TASK_LOG.md
+docs/prd/
+  0001-prd-core-sqlite-engine-integration.md
+  0002-prd-table-data-viewer.md
+  0003-prd-schema-inspector.md
+  0004-prd-sql-query-executor.md
+  0005-prd-sql-file-editor-support.md
+  0006-prd-data-editor-crud-operations.md
+  0007-prd-data-export-functionality.md
+  0008-prd-sqlite-read-write-admin-access.md
+  0009-prd-production-readiness.md
+scripts/
+  ci-check-attribution.sh
+.github/
+  copilot-instructions.md
+.github/workflows/
+  attribution-policy.yml
+.git/
+  FETCH_HEAD
+  HEAD
+  config
+  description
+  index
+  packed-refs
+.git/objects/
+.git/objects/pack/
+  pack-9489856958ee3f724d43c47b00eb2ffc28e56f87.idx
+  pack-9489856958ee3f724d43c47b00eb2ffc28e56f87.pack
+  pack-9489856958ee3f724d43c47b00eb2ffc28e56f87.rev
+.git/objects/info/
+.git/info/
+  exclude
+.git/logs/
+  HEAD
+.git/logs/refs/
+.git/hooks/
+  applypatch-msg.sample
+  commit-msg.sample
+  fsmonitor-watchman.sample
+  post-update.sample
+  pre-applypatch.sample
+  pre-commit.sample
+  pre-merge-commit.sample
+  pre-push.sample
+  pre-rebase.sample
+  pre-receive.sample
+  prepare-commit-msg.sample
+  push-to-checkout.sample
+  sendemail-validate.sample
+  update.sample
+.git/refs/
+.git/refs/heads/
+  master
+  victor
+.git/refs/tags/
+.git/refs/remotes/
+.vscode/
+  extensions.json
+  launch.json
+  mcp.json
+  settings.json
+  tasks.json
+src/
+  extension.ts
+  sqliteEditor.ts
+src/test/
+  extension.test.ts
 ```
 
-- **Frontend**: A Webview populated with HTML/CSS/JS that communicates with the extension host.
-- **Backend**: The extension host reads the SQLite file from disk and sends data to the Webview.
-- **Security**: The Webview is sandboxed and only allows scripts defined by the extension.
+---
 
-### Data Flow
+## Configuration
 
-```mermaid
-sequenceDiagram
-    participant User
-    participant VSCode as VS Code
-    participant Ext as Extension Host
-    participant Webview
+Use environment variables documented by the project. Do not commit secrets.
 
-    User->>VSCode: Click .sqlite file
-    VSCode->>Ext: resolveCustomEditor()
-    Ext->>Webview: Create Webview Panel
-    Webview-->>Ext: Ready
-    Ext->>Webview: Send HTML Content
-    Webview-->>User: Display Loading State
-    Webview->>Ext: Request Table List
-    Ext->>VSCode: Read Database Header
-    VSCode-->>Ext: Database Metadata
-    Ext->>Webview: Return Table List
-    Webview-->>User: Render Tables
-```
+---
 
-## Troubleshooting
+## API Reference
 
-- **File not opening?** Ensure the file extension is supported (`.db`, `.sqlite`, `.sqlite3`). You can right-click the file and select "Open With..." -> "SQLite Viewer".
-- **Large files:** Opening very large database files (> 100MB) might be slow initially as we optimize data loading.
+See source code and existing docs for endpoints and interfaces.
 
-## Roadmap
-
-- [x] Basic File Viewer
-- [ ] Execute SQL Queries
-- [ ] SQL File Support (.sql)
-- [ ] Data Editing
-- [ ] Export Data
-
-## Ethics & Governance
-
-This project adheres to the ethical development standards defined in our [AI Dev Tasks](https://github.com/FutureTranz-Inc/ai-dev-tasks) framework. We are committed to:
-- Transparency in our development process.
-- Responsible use of automation and AI.
-- Ensuring user data privacy (this extension runs entirely locally).
-
-## Privacy Policy
-
-Your privacy is important to us.
-- **Local Only:** This extension operates entirely on your local machine.
-- **No Data Collection:** We do not collect or transmit any of your database content or personal information.
-- See the full [Privacy Policy](PRIVACY.md).
+---
 
 ## Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on code of conduct and the pull request process.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development guidelines.
+
+---
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
-Free and open source for personal and commercial use.
+See LICENSE file in this repository (or project default if absent).
+
+---
+
+## Project Status
+
+| Metric | Value |
+|--------|-------|
+| Maturity | MVP |
+| Activity Score | 48.0 |
+| Stars | 2.0 |
+| Contributors | 1.0 |
+| Open Issues | 0 |
+| Last Activity | 2026-02-17 |
+| Velocity | High |
+
+
+
+---
+
+<sub>Auto-generated by [FutureTranz Portfolio Pipeline](https://github.com/FutureTranz-Inc/github-portfolio-tracker) — synced from Notion Projects Inventory V2 on 2026-02-27</sub>
