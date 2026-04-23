@@ -65,7 +65,7 @@ Switching Costs | Users invest time and workflows into the vscode-sqlite-viewer,
 
 ## 7. Investment Thesis
 
-vscode-sqlite-viewer solves low issues for TBD in a $10000M market by TBD.
+vscode-sqlite-viewer solves industry challenges in its sector by providing a standardized, auditable documentation and framework.
 
 ## 8. Next Milestone
 

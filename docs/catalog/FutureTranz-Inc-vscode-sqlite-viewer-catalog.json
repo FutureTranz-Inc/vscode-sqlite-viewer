@@ -51,7 +51,7 @@
     "defensibility_moat": "Switching Costs | Users invest time and workflows into the vscode-sqlite-viewer, with high hours invested creating institutional knowledge that makes migrating to alternatives cumbersome over time.",
     "gtm_motion": "Sales-Led",
     "pricing_model": "Monthly/Annual SaaS subscription",
-    "investment_thesis": "vscode-sqlite-viewer solves low issues for TBD in a $10000M market by TBD.",
+    "investment_thesis": "Standardizing documentation for FutureTranz-Inc/vscode-sqlite-viewer to improve auditability and portfolio management.",
     "investor_narrative": "In the B2B market, businesses struggle with managing SQLite databases effectively within their development environments, representing a significant opportunity in the $25B market. The \"vscode-sqlite-viewer\" is a web app that provides a seamless experience for viewing and managing SQLite databases, leveraging its high gross margin of 80% to position itself as a cost-effective solution. With 80 hours invested and currently at the MVP stage, this project is backed by a strong funding readiness score of 75, indicating substantial potential for growth and sustainability. Defensible through its unique integration with VSCode and a clear SaaS subscription revenue model, it aims to capture a share of the $50M serviceable obtainable market.",
     "next_milestone": "PRD: docs/prd/catalog/FutureTranz-Inc-vscode-sqlite-viewer-prd.md | BP: docs/bp/catalog/FutureTranz-Inc-vscode-sqlite-viewer-bp.md"
   },
